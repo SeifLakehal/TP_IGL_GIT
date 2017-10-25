@@ -19,5 +19,7 @@ public class IGLTP1 {
      */
       public static void main(String[] args) throws IOException, Tai_Dif_Exception {
         gestion_menu();
+      
     }
+      
 }

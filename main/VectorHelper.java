@@ -14,7 +14,7 @@ public class VectorHelper {
          * @param prompt
          * @return 
          */
-    public static float getInt(String prompt) {
+    public static int getInt(String prompt) {
         System.out.print(prompt + " ");
         int entier = input.nextInt();
         input.nextLine(); // Se d�barrasser de cette ligne

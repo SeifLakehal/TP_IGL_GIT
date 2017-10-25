@@ -1,4 +1,6 @@
-package test;
+
+
+package main;
 
 import java.util.*;
 import org.junit.After;

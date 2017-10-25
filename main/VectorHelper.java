@@ -8,39 +8,36 @@ import java.util.Scanner;
 
 public class VectorHelper {
 	static Scanner input = new Scanner(System.in);
-/**
-     * Cette fonction permet la lecure d'un entier entré au clavier
-     *
-     * @param prompt message diffusé qui permet à l'utilisateur de comprendre ce qu'il doit faire
-     * @return entier qui represente le nombre lu à partir du clavier
-     */
+
+        /**
+         * 
+         * @param prompt
+         * @return 
+         */
     public static int getInt(String prompt) {
         System.out.print(prompt + " ");
         int entier = input.nextInt();
-        input.nextLine(); // Se débarrasser de cette ligne
+        input.nextLine(); // Se d?barrasser de cette ligne
         return entier;
     }
 
     /**
-     * Cette fonction permet le remplissage d'un tableau de n elements à partir du clavier
-     *
-     * @param n la taille du tableau à remplir
-     * @return tab[] le tableau remplie à parti rdu clavier
+     * 
+     * @param n
+     * @return 
      */
     public static int [ ]  RemplirTab(int n) {
         int i;
         int[ ] tab = new int[n];
         for (i = 0; i < tab.length; i++) {
-            tab[i] = getInt("       Entrée n°" + (i + 1));
+            tab[i] = getInt("       Entr?e n?" + (i + 1));
         }
         return tab;
     }
 
     /**
-     * cette fonction affiche le contenu d'un tableau donné en entrée le contenu est affiché sur une meme ligne 
-     * tous les elements du tableau sont separé l'un de l'autre par un |
-     *
-     * @param tab le tableau à afficher
+     * 
+     * @param tab 
      */
     public static void AfficherTab(int tab[]) {
         System.out.print("| ");
@@ -52,12 +49,9 @@ public class VectorHelper {
     }
 
     /**
-     * Cette fonction donne le tableau inverse d'un tableau donné en entrée par
-     * exemple si on prend le tableau |5|19|7|32|1| le resultat de son inversion
-     * est |1|32|7|19|5|
-     *
-     * @param tab le tableau à inverser
-     * @return sab[] le tableau resulatant de l'operation d'inversion
+     * 
+     * @param tab
+     * @return 
      */
     public static int[] InverserTab(int tab[]) {
         int n = tab.length;
@@ -70,14 +64,9 @@ public class VectorHelper {
     }
 
     /**
-     * Cette fonction effectue un tri à bulle à un tableau donné en entrée Son
-     * principe : L'algorithme parcourt le tableau et compare les éléments
-     * consécutifs. Lorsque deux éléments consécutifs ne sont pas dans l'ordre,
-     * ils sont échangés. Et ansi de suite jusqu'à ce que tous les elements du
-     * tableau sont dans l'ordre.
-     *
-     * @param tab le tableau à trier
-     * @return tab le tableau trié
+     * 
+     * @param tab
+     * @return 
      */
     public static int[] TriBulles(int tab[]) {
         boolean tab_in_order = false;
@@ -98,16 +87,13 @@ public class VectorHelper {
         return tab;
     }
 
-    /**
-     * Cette fonction calcule la somme de deux tableaux de même taille.
-     * Exemple : soient T[1,5,7,19,6,14] et S[7,29,35,13,91,2] le resultat est R[8,34,42,32,97,16]
-     *Si les 2 tableaux ne sont pas de même taille une exception est generée et un message d'erreur est affiché.
-     * 
-     * @param T le premier tableau qui sera sommer
-     * @param S le deuxieme tableau pour effectuer l'operation de la somme
-     * @return R[] le taleau resulatant de la somme des deux tableaux T et S
-     * @throws tp1.Tai_Dif_Exception
-     */
+   /**
+    * 
+    * @param T
+    * @param S
+    * @return
+    * @throws Tai_Dif_Exception 
+    */
     public static int[] SomVector(int T[], int S[]) throws Tai_Dif_Exception  {
         int n = T.length, m = S.length;
         int[] R = new int[n];
@@ -127,10 +113,8 @@ public class VectorHelper {
     }
 
     /**
-     * Cette fonction calcule en même temps le min et le max d'un tableau donné en entrée
-     * Exemple : soit T[5,17,3,35] le min de ce tableau est 3 et le max est 35
      * 
-     * @param tab le tableau à traiter
+     * @param tab 
      */
     public static void MaxMin(int tab[]) {
         int min, max, n = tab.length;
@@ -141,24 +125,22 @@ public class VectorHelper {
         max = S[n - 1];
         System.out.println("La maximum de ce tableau est : " + max);
     }
-
-
+    
+ 
      
     /**
-     * Cette fonction represente un menu d'excution Ce menu rend notre execution
-     * bien organisée et plus lisible
-     *
-     * @throws java.io.IOException
-     * @throws tp1.Tai_Dif_Exception
+     * 
+     * @throws IOException
+     * @throws Tai_Dif_Exception 
      */
     public static void gestion_menu() throws IOException, Tai_Dif_Exception {
         int cas, n, m,s;
         int[] tab;
         int[] sab;
         BufferedReader syl1 = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("1-Tri des éléments d’un vecteur");
+        System.out.println("1-Tri des ?l?ments d?un vecteur");
         System.out.println("2-La somme de deux vecteurs");
-        System.out.println("3-Inverser les éléments d'un vecteur");
+        System.out.println("3-Inverser les ?l?ments d'un vecteur");
         System.out.println("4-Max, Min d'un vecteur");
         System.out.println("5-La Multiplication du vecteur par un nombre ");
         System.out.println("6-Quitter");
@@ -172,7 +154,7 @@ public class VectorHelper {
                 System.out.println("    Tri d'un vecteur");
                 System.out.println("*----------------------*");
                 System.out.println();
-                n = getInt("Donnez le nombre d'éléments de vecteur :");
+                n = getInt("Donnez le nombre d'?l?ments de vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
                 AfficherTab(TriBulles(tab));
@@ -183,10 +165,10 @@ public class VectorHelper {
                 System.out.println("*------------------------*");
                 System.out.println("La somme des deux vecteurs");
                 System.out.println("*------------------------*");
-                n = getInt("Donnez le nombre d'éléments du premier vecteur :");
+                n = getInt("Donnez le nombre d'?l?ments du premier vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
-                m = getInt("Donnez le nombre d'éléments de deuxiemme vecteur :");
+                m = getInt("Donnez le nombre d'?l?ments de deuxiemme vecteur :");
                 sab = new int[m];
                 sab = RemplirTab(m);
                 System.out.println("Le vecteur resultant est : ");
@@ -201,7 +183,7 @@ public class VectorHelper {
                 System.out.println("*---------------------------------*");
                 System.out.println("");
                 System.out.println("");
-                n = getInt("Donnez le nombre d'éléments du vecteur :");
+                n = getInt("Donnez le nombre d'?l?ments du vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
                 AfficherTab(InverserTab(tab));
@@ -214,7 +196,7 @@ public class VectorHelper {
                 System.out.println("*---------------------------------*");
                 System.out.println("");
                 System.out.println("");
-                n = getInt("Donnez le nombre d'entrées du vecteur :");
+                n = getInt("Donnez le nombre d'entr?es du vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
                 System.out.println("*--------------------------------------*");
@@ -227,7 +209,7 @@ public class VectorHelper {
                 System.out.println("*------------------------*");
                 System.out.println("La Multiplication du vecteur par un nombre ");
                 System.out.println("*------------------------*");
-                n = getInt("Donnez le nombre d'entrées du vecteur :");
+                n = getInt("Donnez le nombre d'entr?es du vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
                 s = getInt("Donner Le nombre :");           

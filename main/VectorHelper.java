@@ -17,7 +17,7 @@ public class VectorHelper {
     public static int getInt(String prompt) {
         System.out.print(prompt + " ");
         int entier = input.nextInt();
-        input.nextLine(); // Se d?barrasser de cette ligne
+        input.nextLine(); // Se d�barrasser de cette ligne
         return entier;
     }
 
@@ -30,7 +30,7 @@ public class VectorHelper {
         int i;
         int[ ] tab = new int[n];
         for (i = 0; i < tab.length; i++) {
-            tab[i] = getInt("       Entr?e n?" + (i + 1));
+            tab[i] = getInt("       Entr�e n�" + (i + 1));
         }
         return tab;
     }
@@ -126,7 +126,24 @@ public class VectorHelper {
         System.out.println("La maximum de ce tableau est : " + max);
     }
     
- 
+   /**
+    * 
+    * @param T
+    * @param S
+    * @return
+    * @throws Tai_Dif_Exception 
+    */
+     public static int[] MulVector(int T[], int S) throws Tai_Dif_Exception  {
+        int n = T.length ;
+        int[] R = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            R[i] = T[i] * S;
+        }
+
+        return R;
+    }
+
      
     /**
      * 
@@ -138,9 +155,9 @@ public class VectorHelper {
         int[] tab;
         int[] sab;
         BufferedReader syl1 = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("1-Tri des ?l?ments d?un vecteur");
+        System.out.println("1-Tri des �l�ments d�un vecteur");
         System.out.println("2-La somme de deux vecteurs");
-        System.out.println("3-Inverser les ?l?ments d'un vecteur");
+        System.out.println("3-Inverser les �l�ments d'un vecteur");
         System.out.println("4-Max, Min d'un vecteur");
         System.out.println("5-La Multiplication du vecteur par un nombre ");
         System.out.println("6-Quitter");
@@ -154,7 +171,7 @@ public class VectorHelper {
                 System.out.println("    Tri d'un vecteur");
                 System.out.println("*----------------------*");
                 System.out.println();
-                n = getInt("Donnez le nombre d'?l?ments de vecteur :");
+                n = getInt("Donnez le nombre d'�l�ments de vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
                 AfficherTab(TriBulles(tab));
@@ -165,10 +182,10 @@ public class VectorHelper {
                 System.out.println("*------------------------*");
                 System.out.println("La somme des deux vecteurs");
                 System.out.println("*------------------------*");
-                n = getInt("Donnez le nombre d'?l?ments du premier vecteur :");
+                n = getInt("Donnez le nombre d'�l�ments du premier vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
-                m = getInt("Donnez le nombre d'?l?ments de deuxiemme vecteur :");
+                m = getInt("Donnez le nombre d'�l�ments de deuxiemme vecteur :");
                 sab = new int[m];
                 sab = RemplirTab(m);
                 System.out.println("Le vecteur resultant est : ");
@@ -183,7 +200,7 @@ public class VectorHelper {
                 System.out.println("*---------------------------------*");
                 System.out.println("");
                 System.out.println("");
-                n = getInt("Donnez le nombre d'?l?ments du vecteur :");
+                n = getInt("Donnez le nombre d'�l�ments du vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
                 AfficherTab(InverserTab(tab));
@@ -196,7 +213,7 @@ public class VectorHelper {
                 System.out.println("*---------------------------------*");
                 System.out.println("");
                 System.out.println("");
-                n = getInt("Donnez le nombre d'entr?es du vecteur :");
+                n = getInt("Donnez le nombre d'entr�es du vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
                 System.out.println("*--------------------------------------*");
@@ -209,7 +226,7 @@ public class VectorHelper {
                 System.out.println("*------------------------*");
                 System.out.println("La Multiplication du vecteur par un nombre ");
                 System.out.println("*------------------------*");
-                n = getInt("Donnez le nombre d'entr?es du vecteur :");
+                n = getInt("Donnez le nombre d'entr�es du vecteur :");
                 tab = new int[n];
                 tab = RemplirTab(n);
                 s = getInt("Donner Le nombre :");           

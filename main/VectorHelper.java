@@ -15,7 +15,7 @@ public class VectorHelper {
          * @return 
          */
 
-    public static String getInt(String prompt) {salut
+    public static aller getInt(String prompt) {salut
 
         System.out.print(prompt + " ");
         int entier = input.nextInt();

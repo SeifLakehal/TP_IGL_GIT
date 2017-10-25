@@ -5,14 +5,14 @@
  */
 package main;
 
-import static igltp1.VectorHelper.gestion_menu;
+import static main.VectorHelper.gestion_menu;
 import java.io.IOException;
 
 /**
  *
  * @author DELL XPS
  */
-public class IGLTP1 {
+public class main {
 
     /**
      * @param args the command line arguments

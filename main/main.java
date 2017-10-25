@@ -15,7 +15,7 @@ import java.io.IOException;
 public class main {
 
     /**
-     * @param args the command line argument to blablah blablah
+     * @param args the command line argument 
      */
       public static void main(String[] args) throws IOException, Tai_Dif_Exception {
         gestion_menu();
